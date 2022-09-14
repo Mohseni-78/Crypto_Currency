@@ -1,0 +1,28 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  flex-wrap: wrap;
+  z-index: 1;
+  width: 100%;
+  border-radius: 5px;
+  background-image: linear-gradient(
+    to top,
+    #00416a,
+    #3a5d80,
+    #617a97,
+    #8799ae,
+    #aeb9c6,
+    #aeb9c6,
+    #aeb9c6,
+    #aeb9c6,
+    #8799ae,
+    #617a97,
+    #3a5d80,
+    #00416a
+  );
+
+  
+}

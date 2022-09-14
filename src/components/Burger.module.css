@@ -1,0 +1,22 @@
+.container {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  z-index: 10;
+  right: 15px;
+  top: 18px;
+  display: none;
+  transition: all 0.3s ease;
+}
+.container div {
+  background-color: rgb(0, 255, 255);
+  width: 25px;
+  height: 2px;
+  margin: 4px;
+  transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+  .container {
+    display: block;
+  }
+}

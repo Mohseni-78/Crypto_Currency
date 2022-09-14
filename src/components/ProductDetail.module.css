@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.container img {
+  /* width: 500px; */
+  max-width: 100%;
+  max-width: 100%;
+  /* height: 500px; */
+}
+.container h1 {
+  margin-top: 10px;
+}
+.container span {
+  font-size: 2rem;
+}
+.container p {
+  line-height: 1.8;
+  margin: 5px 10px;
+  width: 100%;
+  max-width: 70%;
+}
+.loading {
+  text-align: center;
+}
