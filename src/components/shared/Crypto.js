@@ -31,7 +31,7 @@ const Crypto = ({ data }) => {
       >
         {market_cap_change_percentage_24h.toFixed(2)} %
       </td>
-      <td>$ {market_cap}</td>
+      <td>$ {market_cap.toLocaleString()}</td>
     </tr>
   );
 };

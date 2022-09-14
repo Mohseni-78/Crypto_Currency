@@ -1,0 +1,30 @@
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  li {
+    padding: 0 10px;
+    button {
+      width: 50px;
+      height: 50px;
+      outline: 0;
+      border: 1px solid silver;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      background-color: rgba(0, 0, 0, 0.1);
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  }
+  button:hover {
+    background-color: #fadf00;
+    color: #000;
+  }
+  .active {
+    background-color: #fadf00;
+    color: #000;
+  }
+}

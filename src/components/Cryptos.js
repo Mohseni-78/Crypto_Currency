@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 //                 Style
 import styles from "../components/css/Cryptos.module.scss";
@@ -8,9 +8,18 @@ import Crypto from "./shared/Crypto";
 
 //           Context
 import { CryptoContext } from "../contexts/CryptoContextProvider";
+import Paginate from "./Paginate";
 
 const Cryptos = () => {
   const data = useContext(CryptoContext);
+
+  const [currentpage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(10);
+
+  const lastPostIndex = currentpage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+
+  const currentPosts = data.slice(firstPostIndex, lastPostIndex);
   return (
     <main>
       <h2>Crypto Currency Prices By Market Cap</h2>
@@ -32,12 +41,18 @@ const Cryptos = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
+            {currentPosts.map((item) => (
               <Crypto key={item.id} data={item} />
             ))}
           </tbody>
         </table>
       </section>
+      <Paginate
+        totalposts={data.length}
+        postsPerPage={postsPerPage}
+        setCurrentPage={setCurrentPage}
+        currentpage={currentpage}
+      />
     </main>
   );
 };
