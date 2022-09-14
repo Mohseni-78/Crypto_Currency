@@ -1,0 +1,54 @@
+main {
+  background: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  h2 {
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 3px;
+    padding: 10px 0;
+  }
+  form input {
+    padding: 15px 5px;
+    width: 80%;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid silver;
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: 0;
+    color: #fff;
+  }
+  input::placeholder {
+    color: silver;
+  }
+  input:focus {
+    box-shadow: 0 0 3px 0 #b2cded;
+  }
+}
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  table {
+    width: 80%;
+  }
+  tr:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  thead {
+    background: #fadf00;
+    th {
+      padding: 10px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    tr th:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+    tr th:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+  }
+}

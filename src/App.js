@@ -4,6 +4,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import CryptoContextProvider from "./contexts/CryptoContextProvider";
+import Cryptos from "./components/Cryptos";
 
 //                Layout
 
@@ -13,6 +14,7 @@ function App() {
       <CryptoContextProvider>
         <Navbar />
         <Header />
+        <Cryptos/>
       </CryptoContextProvider>
     </>
   );
