@@ -5,13 +5,14 @@ import styles from "../components/css/Cryptos.module.scss";
 
 //      Components
 import Crypto from "./shared/Crypto";
+import Paginate from "./Paginate";
 
 //           Context
 import { CryptoContext } from "../contexts/CryptoContextProvider";
-import Paginate from "./Paginate";
 
 const Cryptos = () => {
-  const data = useContext(CryptoContext);
+  const {data,symbolText} = useContext(CryptoContext);
+
 
   const [currentpage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(10);
@@ -53,9 +54,9 @@ const Cryptos = () => {
           </thead>
           <tbody>
             {search
-              ? filterCoin.map((item) => <Crypto key={item.id} data={item} />)
+              ? filterCoin.map((item) => <Crypto key={item.id} data={item} symbolText={symbolText}/>)
               : currentPosts.map((item) => (
-                  <Crypto key={item.id} data={item} />
+                  <Crypto key={item.id} data={item} symbolText={symbolText}/>
                 ))}
           </tbody>
         </table>

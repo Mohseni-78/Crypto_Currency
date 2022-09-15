@@ -3,7 +3,7 @@ import React from "react";
 //                 Style
 import styles from "../css/Crypto.module.scss";
 
-const Crypto = ({ data }) => {
+const Crypto = ({ data, symbolText }) => {
   const {
     image,
     symbol,
@@ -23,7 +23,11 @@ const Crypto = ({ data }) => {
           </div>
         </div>
       </td>
-      <td>$ {current_price}</td>
+      <td>
+        {symbolText === "$"
+          ? ` ${symbolText}  ${current_price} `
+          : `  ${current_price} ${symbolText} `}
+      </td>
       <td
         className={
           market_cap_change_percentage_24h > 0 ? styles.green : styles.red
@@ -31,7 +35,11 @@ const Crypto = ({ data }) => {
       >
         {market_cap_change_percentage_24h.toFixed(2)} %
       </td>
-      <td>$ {market_cap.toLocaleString()}</td>
+      <td>
+        {symbolText === "$"
+          ? ` ${symbolText}  ${market_cap.toLocaleString()} `
+          : `  ${market_cap.toLocaleString()} ${symbolText} `}
+      </td>
     </tr>
   );
 };
