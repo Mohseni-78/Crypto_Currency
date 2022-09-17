@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 
 //     API
-import { getCrypto } from "../services/Api";
+import { getAllCrypto } from "../services/Api";
 
 // Create Context
 export const CryptoContext = createContext();
@@ -14,13 +14,18 @@ const CryptoContextProvider = ({ children }) => {
   useEffect(() => {
     currency === "usd" ? setSymbol("$") : setSymbol("ETH");
     const fetchApi = async () => {
-      setCrypto(await getCrypto(currency));
+      setCrypto(await getAllCrypto(currency));
     };
     fetchApi();
   }, [currency]);
   return (
     <CryptoContext.Provider
-      value={{ data: crypto, setCurrency, symbolText: symbol }}
+      value={{
+        data: crypto,
+        setCurrency,
+        symbolText: symbol,
+        currency: currency,
+      }}
     >
       {children}
     </CryptoContext.Provider>

@@ -1,21 +1,22 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import CryptoDetail from "./components/CryptoDetail";
 
 //                     Components
-import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import CryptoContextProvider from "./contexts/CryptoContextProvider";
 import Cryptos from "./components/Cryptos";
 
-//                Layout
+//                      Layout
+import Layout from "./Layout";
 
 function App() {
   return (
     <>
-      <CryptoContextProvider>
-        <Navbar />
-        <Header />
-        <Cryptos/>
-      </CryptoContextProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Cryptos />} />
+          <Route path="/:id" element={<CryptoDetail />} />
+        </Route>
+      </Routes>
     </>
   );
 }

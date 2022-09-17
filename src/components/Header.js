@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 
 //                 Style
 import styles from "../components/css/Header.module.scss";
 
-//    Components
+//    Context
+import Carousel from "./Carousel";
 
 const Header = () => {
   return (
@@ -11,6 +12,7 @@ const Header = () => {
       <header>
         <h1>Crypto Currency</h1>
         <p>Get All The Info Regarding Your Favorite Crypto Currency</p>
+        <Carousel />
       </header>
     </>
   );
