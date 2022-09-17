@@ -30,6 +30,9 @@ import HTMLReactParser from "html-react-parser";
 //                  Context
 import { CryptoContext } from "../contexts/CryptoContextProvider";
 
+//                    Components
+import Loading from "./Loading";
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -140,7 +143,7 @@ const CryptoDetail = () => {
       </section>
     </main>
   ) : (
-    <h1>Loading</h1>
+    <Loading/>
   );
 };
 

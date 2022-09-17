@@ -68,7 +68,7 @@ const Carousel = () => {
         disableButtonsControls
         responsive={responsive}
         items={items}
-        // autoPlay
+        autoPlay
       />
     </div>
   );
