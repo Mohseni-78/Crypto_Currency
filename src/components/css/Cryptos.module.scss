@@ -38,7 +38,6 @@ section {
   padding: 1rem 0;
   table {
     width: 90%;
-    overflow:auto !important;
   }
   tr:hover {
     background-color: rgba(0, 0, 0, 0.1);
@@ -60,9 +59,13 @@ section {
     }
   }
 }
-@media (max-width: 768px) {
-  main section{
-    table {
+@media screen and (max-width: 768px) {
+  table {
+    overflow: scroll !important;
+    thead{
+      font-size: 13px;
+      th{
+      }
     }
   }
 }
