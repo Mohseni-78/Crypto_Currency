@@ -38,10 +38,10 @@ const Carousel = () => {
             }}
           >
             {profit && "+"}
-            {coin.price_change_percentage_24h?.toFixed(2)}%
+            {coin.price_change_percentage_24h.toFixed(2)}%
           </span>
         </span>
-        <span style={{fontWeight:"700"}}>
+        <span style={{ fontWeight: "700" }}>
           {symbolText} {coin.current_price.toFixed(2)}
         </span>
       </Link>
@@ -52,7 +52,16 @@ const Carousel = () => {
     0: {
       items: 1,
     },
-    512: {
+    576: {
+      items: 2,
+    },
+    768: {
+      items: 2,
+    },
+    992: {
+      items: 3,
+    },
+    1200: {
       items: 4,
     },
   };
