@@ -4,11 +4,11 @@ tr {
     padding: 10px;
     color: #fff;
     font-size: 18px;
-    a{
+    a {
       text-decoration: none;
       color: #fadf00;
     }
-    a:hover{
+    a:hover {
       color: #edff12;
     }
   }
@@ -16,13 +16,11 @@ tr {
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 1px;
-
   }
   td:nth-child(3) {
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 1px;
-
   }
   td:nth-child(4) {
     font-size: 15px;
@@ -57,29 +55,27 @@ tr {
   color: #c0392b;
 }
 
-@media (max-width:768px){
-  td{
+@media (max-width: 768px) {
+  td {
     font-size: 15px !important;
   }
   td:nth-child(2) {
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0 !important;
-
   }
   td:nth-child(3) {
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0 !important;
-
   }
   td:nth-child(4) {
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0 !important;
   }
-  .container{
-    img{
+  .container {
+    img {
       width: 40px;
       height: 40px;
     }
