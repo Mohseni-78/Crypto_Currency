@@ -9,7 +9,7 @@ main {
     padding: 10px 0;
     font-size: 2rem;
   }
-  h2:first-letter{
+  h2:first-letter {
     color: #fadf00 !important;
     font-size: 3rem;
   }
@@ -38,6 +38,7 @@ section {
   padding: 1rem 0;
   table {
     width: 90%;
+    overflow:auto !important;
   }
   tr:hover {
     background-color: rgba(0, 0, 0, 0.1);
@@ -56,6 +57,12 @@ section {
     }
     tr th:last-child {
       border-radius: 0 4px 4px 0;
+    }
+  }
+}
+@media (max-width: 768px) {
+  main section{
+    table {
     }
   }
 }
