@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 //                 Style
-import styles from "../css/Crypto.module.scss";
+import styles from "./Crypto.module.scss";
 
 const Crypto = ({ data, symbolText }) => {
   const navigate=useNavigate();
@@ -25,9 +25,8 @@ const Crypto = ({ data, symbolText }) => {
 
       <tr onClick={linkHandler}>
         <td>
-
           <div className={styles.container}>
-            <img src={image} alt="" />
+            <img src={image} alt=""  />
             <div className={styles.cryptoNames}>
               <h3>{symbol.toUpperCase()}</h3>
               <span>{name}</span>

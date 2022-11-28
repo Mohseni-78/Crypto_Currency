@@ -1,10 +1,11 @@
 import React from "react";
 
 //                 Style
-import styles from "../components/css/Header.module.scss";
+// eslint-disable-next-line no-unused-vars
+import "./Header.module.scss";
 
 //    Context
-import Carousel from "./Carousel";
+import Carousel from "../carousel/Carousel";
 
 const Header = () => {
   return (

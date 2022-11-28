@@ -36,8 +36,10 @@ section {
   align-items: center;
   justify-content: center;
   padding: 1rem 0;
+
   table {
     width: 90%;
+
   }
   tr:hover {
     background-color: rgba(0, 0, 0, 0.1);
@@ -45,10 +47,12 @@ section {
   }
   thead {
     background: #fadf00;
+
     th {
       padding: 10px;
       text-align: left;
       font-weight: 700;
+
     }
 
     tr th:first-child {
@@ -62,10 +66,8 @@ section {
 @media screen and (max-width: 768px) {
   table {
     overflow: scroll !important;
-    thead{
+    thead {
       font-size: 13px;
-      th{
-      }
     }
   }
 }

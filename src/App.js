@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import CryptoDetail from "./components/CryptoDetail";
+import CryptoDetail from "./components/cryptoDetail/CryptoDetail";
 
 //                     Components
-import Cryptos from "./components/Cryptos";
+import Cryptos from "./components/cryptos/Cryptos";
 
 
 //                      Layout

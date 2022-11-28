@@ -1,6 +1,6 @@
 import React from "react";
 //                 Style
-import styles from "./css/Paginate.module.scss";
+import styles from "./Paginate.module.scss";
 
 const Paginate = ({
   totalposts,

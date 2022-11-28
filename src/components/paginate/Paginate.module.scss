@@ -4,6 +4,7 @@ ul {
   align-items: center;
   justify-content: center;
   color: #fff;
+  padding: 0 20px;
   li {
     padding: 0 10px;
     button {
@@ -29,7 +30,10 @@ ul {
   }
 }
 @media (max-width: 768px) {
-  ul li {
-    padding: 0 5px;
+  ul {
+    padding: 0 20px 5px 20px;
+    li {
+      padding: 0 5px;
+    }
   }
 }

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 //                 config
-import { chartDays } from "../config/data";
+import { chartDays } from "../../config/data";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -18,20 +18,20 @@ import {
 import { Line } from "react-chartjs-2";
 
 //                 Style
-import styles from "./css/CryptoDetail.module.scss";
+import styles from "./CryptoDetail.module.scss";
 
 //                                          Api
-import { getDetailCrypto, getHistoricalChart } from "../services/Api";
+import { getDetailCrypto, getHistoricalChart } from "../../services/Api";
 
 //                                    Helper
-import { shortenDes } from "../helper/function";
+import { shortenDes } from "../../helper/function";
 import HTMLReactParser from "html-react-parser";
 
 //                  Context
-import { CryptoContext } from "../contexts/CryptoContextProvider";
+import { CryptoContext } from "../../contexts/CryptoContextProvider";
 
 //                    Components
-import Loading from "./Loading";
+import Loading from "../loading/Loading";
 
 ChartJS.register(
   CategoryScale,
@@ -93,7 +93,7 @@ const CryptoDetail = () => {
       </section>
       <section className={styles.chart}>
         {!historicalData ? (
-          <h1>Loading ...</h1>
+          <Loading />
         ) : (
           <>
             <Line
@@ -104,13 +104,14 @@ const CryptoDetail = () => {
                     date.getHours() > 12
                       ? `${date.getHours() - 12}:${date.getMinutes()} PM`
                       : `${date.getHours()}:${date.getMinutes()} AM`;
+                  // console.log(date.toLocaleDateString());
                   return days === 1 ? time : date.toLocaleDateString();
                 }),
 
                 datasets: [
                   {
                     data: historicalData?.map((coin) => coin[1]),
-                    label: `Price ( Past ${days} Days ) in ${currency}`,
+                    label: `Price ( Past ${days} Days ) in ${currency.toUpperCase()}`,
                     borderColor: "#EEBC1D",
                   },
                 ],
@@ -126,9 +127,7 @@ const CryptoDetail = () => {
             <div className={styles.btnDisplay}>
               {chartDays.map((day) => (
                 <button
-                  className={
-                    day.value === days ? styles.selectedBtn : styles.daysBtn
-                  }
+                  className={day.value === days ? styles.selectedBtn : styles.daysBtn}
                   key={day.value}
                   onClick={() => {
                     setDays(day.value);
@@ -143,7 +142,7 @@ const CryptoDetail = () => {
       </section>
     </main>
   ) : (
-    <Loading/>
+    <Loading />
   );
 };
 

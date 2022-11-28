@@ -1,15 +1,15 @@
 import React, { useContext, useState } from "react";
 
 //                 Style
-import styles from "../components/css/Cryptos.module.scss";
+import "./Cryptos.module.scss";
 
 //      Components
-import Crypto from "./shared/Crypto";
-import Paginate from "./Paginate";
-import Header from "./Header";
+import Crypto from "../shared/Crypto";
+import Paginate from "../paginate/Paginate";
+import Header from "../header/Header";
 
 //           Context
-import { CryptoContext } from "../contexts/CryptoContextProvider";
+import { CryptoContext } from "../../contexts/CryptoContextProvider";
 
 const Cryptos = () => {
   const { data, symbolText } = useContext(CryptoContext);

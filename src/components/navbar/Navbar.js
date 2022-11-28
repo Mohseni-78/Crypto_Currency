@@ -1,7 +1,7 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 //                 Style
-import styles from "../components/css/Navbar.module.scss";
-import { CryptoContext } from "../contexts/CryptoContextProvider";
+import "./Navbar.module.scss";
+import { CryptoContext } from "../../contexts/CryptoContextProvider";
 
 const Navbar = () => {
   const { setCurrency } = useContext(CryptoContext);

@@ -1,7 +1,7 @@
 import React from "react";
 
 //                 Style
-import styles from "../components/css/Loading.module.scss";
+import styles from "./Loading.module.scss";
 
 const Loading = () => {
   return (

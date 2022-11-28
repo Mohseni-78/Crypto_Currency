@@ -6,11 +6,11 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
 //                 Style
-import styles from "../components/css/Carousel.module.scss";
+import styles from  "./Carousel.module.scss";
 //                 Context
-import { CryptoContext } from "../contexts/CryptoContextProvider";
+import { CryptoContext } from "../../contexts/CryptoContextProvider";
 //                 Api
-import { getTrendingCrypto } from "../services/Api";
+import { getTrendingCrypto } from "../../services/Api";
 
 const Carousel = () => {
   const { currency, symbolText } = useContext(CryptoContext);
@@ -27,7 +27,7 @@ const Carousel = () => {
     let profit = coin.price_change_percentage_24h >= 0;
 
     return (
-      <Link className={styles.carouselItem} to={`/${coin.id}`}>
+      <Link to={`/${coin.id}`} className={styles.carouselItem}>
         <img src={coin.image} alt={coin.name} />
         <span>
           {coin.symbol}
@@ -50,18 +50,9 @@ const Carousel = () => {
 
   const responsive = {
     0: {
-      items: 1,
-    },
-    576: {
       items: 2,
     },
-    768: {
-      items: 2,
-    },
-    992: {
-      items: 3,
-    },
-    1200: {
+    512: {
       items: 4,
     },
   };
@@ -69,15 +60,17 @@ const Carousel = () => {
   return (
     <div className={styles.carousel}>
       <AliceCarousel
-        mouseTracking
-        infinite
+        autoPlay
+        autoPlayStrategy="none"
         autoPlayInterval={1000}
-        animationDuration={1500}
+        animationDuration={1000}
+        animationType="fadeout"
+        infinite
+        touchTracking={false}
         disableDotsControls
         disableButtonsControls
-        responsive={responsive}
         items={items}
-        autoPlay
+        responsive={responsive}
       />
     </div>
   );
